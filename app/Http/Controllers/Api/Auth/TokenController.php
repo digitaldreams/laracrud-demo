@@ -27,22 +27,14 @@ class TokenController extends ApiController
 
         $user = User::where('email', $request->get('email'))->first();
 
-        if ($user && Hash::check($request->get('password'), $user->password)) {
-
-            try {
-                if (!$token = JWTAuth::attempt($credentials)) {
-                    return response()->json(['error' => 'Email or Password does not match'], 401);
-                }
-            } catch (JWTException $e) {
-                return $this->response->errorInternal('Could not create token');
+        try {
+            if (!$token = JWTAuth::attempt($credentials)) {
+                return response()->json(['error' => 'Email or Password does not match'], 401);
             }
-
-        } else {
-            return $this->response->array([
-                'status' => 422,
-                'result' => 'Email or password does not match'
-            ]);
+        } catch (JWTException $e) {
+            return $this->response->errorInternal('Could not create token');
         }
+
         return $this->response->array([
             'token' => $token,
             'expire_in' => \Carbon\Carbon::now()->addMinutes(config('jwt.ttl'))->format('Y-m-d H:i:s')

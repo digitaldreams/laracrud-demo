@@ -15,16 +15,11 @@ Route::get('/', 'HomeController@welcome');
 
 Auth::routes();
 
-Route::get('/test', function () {
-    $post = new \App\Models\Post();
-});
 Route::get('/home', 'HomeController@index')->name('home');
-
 
 Route::resource('posts', 'PostController');
 
 Route::resource('posts.comments', 'CommentController');
-
 
 Route::group(['prefix' => 'posts'], function () {
 
