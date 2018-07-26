@@ -30,5 +30,8 @@ $router->version('v1', ['namespace' => 'App\Http\Controllers\Api\Auth'], functio
             $api->post('/set', ['as' => 'password.set', 'uses' => 'PasswordController@set']);
         });
     });
+});
 
+$router->version('v1', ['namespace' => 'App\Http\Controllers\Api'], function ($api) {
+    require(__DIR__ . '/version1.php');
 });

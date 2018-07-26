@@ -210,7 +210,7 @@ return [
         /**
          * Path to API route file
          */
-        'api' => 'routes/api.php',
+        'api' => 'routes/version1.php',
 
         /**
          * Should use while developing package.

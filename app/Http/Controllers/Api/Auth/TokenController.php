@@ -25,8 +25,6 @@ class TokenController extends ApiController
     {
         $credentials = $request->only('email', 'password');
 
-        $user = User::where('email', $request->get('email'))->first();
-
         try {
             if (!$token = JWTAuth::attempt($credentials)) {
                 return response()->json(['error' => 'Email or Password does not match'], 401);
