@@ -1,0 +1,24 @@
+    /**
+     * Create a @@modelName@@
+     *
+     *
+     * @Post("/store")
+     *
+     * @Versions({"v1"})
+     * @Transaction({
+     *      @Request(@@apiRequest@@),
+     *      @Response(200, body=@@apiResponse@@),
+     *      @Response(500, body={"message": "Error occurred while saving @@modelName@@"})
+     * })
+     */
+    public function store(@@requestClass@@ $request)
+    {
+        $model=new @@modelName@@;
+        $model->fill($request->all());
+
+        if ($model->save()) {
+            return $this->response->item($model, new @@transformer@@());
+        } else {
+              return $this->response->errorInternal('Error occurred while saving @@modelName@@');
+        }
+    }
