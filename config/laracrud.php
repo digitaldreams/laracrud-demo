@@ -119,7 +119,7 @@ return [
          * For above example, all of the view of this package will be start blog::
          * So Laravel will find that view to package view folder instead of default view folder.
          */
-        'namespace' => 'blog::',
+        'namespace' => 'blog',
 
         /**
          * Protected Columns. There are some column that are internal use only.
@@ -225,7 +225,7 @@ return [
          *
          * Here your route name posts.index will be blog::posts.index
          */
-        'prefix' => 'blog'
+        'prefix' => 'blog::'
     ],
     'transformer' => [
         /**

@@ -6,14 +6,14 @@
             </div>
             <div class="col-sm-3">
                 <div class="btn-group" style="float: left">
-                    <a href="{{route('blogposts.edit',$record->id)}}">
+                    <a href="{{route('blog::posts.edit',$record->id)}}">
     <span class="fa fa-pencil"></span>
 </a>
-                    <a href="{{route('blogposts.show',$record->id)}}">
+                    <a href="{{route('blog::posts.show',$record->id)}}">
     <span class="fa fa-eye"></span>
 </a>
                     <form onsubmit="return confirm('Are you sure you want to delete?')"
-      action="{{route('blogposts.destroy',$record->id)}}"
+      action="{{route('blog::posts.destroy',$record->id)}}"
       method="post"
       style="display: inline">
     {{csrf_field()}}
