@@ -4,7 +4,7 @@ return [
      * Root Namespace of all the Classes. For example if root namespace is App then controller nas Http|Controllers
      * will be App\Http\Controllers
      */
-    'rootNamespace' => 'Blog',
+    'rootNamespace' => 'App',
     /**
      * Configure Model settings
      */
@@ -98,7 +98,7 @@ return [
         /**
          * Path to the main folder. Folder path are relative to base_path
          */
-        'path' => base_path('packages/blog/resources/views'),
+        'path' => base_path('resources/views'),
 
         /**
          * Default Layout
@@ -119,7 +119,7 @@ return [
          * For above example, all of the view of this package will be start blog::
          * So Laravel will find that view to package view folder instead of default view folder.
          */
-        'namespace' => 'blog',
+        'namespace' => false,
 
         /**
          * Protected Columns. There are some column that are internal use only.
@@ -205,12 +205,12 @@ return [
         /**
          * Path to web route file
          */
-        'web' => 'packages/blog/routes/web.php',
+        'web' => 'routes/web.php',
 
         /**
          * Path to API route file
          */
-        'api' => 'packages/blog/routes/version1.php',
+        'api' => 'routes/version1.php',
 
         /**
          * Should use while developing package.
@@ -225,7 +225,7 @@ return [
          *
          * Here your route name posts.index will be blog::posts.index
          */
-        'prefix' => 'blog::'
+        'prefix' => false
     ],
     'transformer' => [
         /**

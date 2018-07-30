@@ -31,7 +31,7 @@
                     <li class="dropdown">
                         <a href="#" class="dropdown-toggle text-white" data-toggle="dropdown" role="button"
                            aria-expanded="false">
-                           Your Name
+                            Your Name
                             (Your Role)
                             <span class="caret"></span>
                         </a>
@@ -41,7 +41,12 @@
                             <li class="py-1">
                                 <a href="{{route('posts.index')}}"><i class="fa fa-pencil-square-o"></i> Posts</a>
                             </li>
-
+                            <li class="py-1">
+                                <a href="{{route('categories.index')}}"><i class="fa fa-list-alt"></i> Categories</a>
+                            </li>
+                            <li class="py-1">
+                                <a href="{{route('tags.index')}}"><i class="fa fa-tags"></i> Tags</a>
+                            </li>
                             <li class="dropdown-divider"></li>
                             <li class="py-1">
                                 <a class="" href="{{ route('logout') }}"

@@ -18,8 +18,9 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::resource('posts', 'PostController');
-
+Route::resource('categories','CategoryController');
 Route::resource('posts.comments', 'CommentController');
+Route::resource('tags','TagController');
 
 Route::group(['prefix' => 'posts'], function () {
 
@@ -34,3 +35,5 @@ Route::group(['prefix' => 'posts'], function () {
     ]);
 
 });
+
+
