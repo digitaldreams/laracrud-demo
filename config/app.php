@@ -150,7 +150,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Blog\ServiceProvider::class,
         /*
          * Application Service Providers...
          */

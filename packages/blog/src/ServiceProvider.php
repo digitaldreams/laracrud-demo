@@ -11,7 +11,6 @@ use Illuminate\Support\ServiceProvider as BaseServiceProvider;
 class ServiceProvider extends BaseServiceProvider
 {
 
-    protected $defer = true;
 
     /**
      * List of command which will be registered.
@@ -27,6 +26,7 @@ class ServiceProvider extends BaseServiceProvider
     public function boot()
     {
         $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
     }
 
     /**
@@ -37,7 +37,7 @@ class ServiceProvider extends BaseServiceProvider
     public function register()
     {
         $this->publishes([
-            __DIR__ . '/../config/package.php' => config_path('blog.php'),
+            __DIR__ . '/../config/blog.php' => config_path('blog.php'),
         ],'blog-config');
 
         $this->publishes([

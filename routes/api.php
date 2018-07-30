@@ -33,5 +33,6 @@ $router->version('v1', ['namespace' => 'App\Http\Controllers\Api\Auth'], functio
 });
 
 $router->version('v1', ['namespace' => 'App\Http\Controllers\Api'], function ($api) {
-    require(__DIR__ . '/version1.php');
+    //please see packages/blog/route/version1.php
+    //require(__DIR__ . '/version1.php');
 });
