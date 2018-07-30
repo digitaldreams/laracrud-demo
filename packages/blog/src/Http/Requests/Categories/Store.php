@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests\Posts;
+namespace Blog\Http\Requests\Categories;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class Update extends FormRequest 
+class Store extends FormRequest 
 {
 
     /**
@@ -25,13 +25,9 @@ class Update extends FormRequest
     public function rules() 
     {
         return [
-			'user_id' => 'required|exists:users,id|numeric',
+			'parent_id' => 'nullable|max:255',
 			'title' => 'nullable|max:255',
-			'slug' => 'nullable|max:255|unique:posts,slug,'.$this->route('post')->id,
-			'status' => 'required|in:draft,published,canceled',
-			'body' => 'nullable|string',
-			'category_id' => 'nullable|exists:categories,id|numeric',
-			'image' => 'nullable|max:255',
+			'slug' => 'required|unique:categories,slug|max:255',
         ];
     }
 

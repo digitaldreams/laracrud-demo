@@ -1,10 +1,10 @@
 @extends('laracrud.layouts.app')
 @section('breadcrumb')
 <li class="breadcrumb-item">
-    <a href="{{route('posts.index')}}">posts</a>
+    <a href="{{route('blog::categories.index')}}">categories</a>
 </li>
 <li class="breadcrumb-item">
-    <a href="{{route('posts.show',$model->id)}}">{{$model->id}}</a>
+    <a href="{{route('blog::categories.show',$model->id)}}">{{$model->id}}</a>
 </li>
 <li class="breadcrumb-item">
     Edit
@@ -12,8 +12,8 @@
 @endsection
 
 @section('tools')
-<a href="{{route('posts.create')}}">
-    <span class="fa fa-plus"></span> posts
+<a href="{{route('blog::categories.create')}}">
+    <span class="fa fa-plus"></span> categories
 </a>
 @endsection
 
@@ -22,8 +22,8 @@
     <div class='col-md-12'>
         <div class='card'>
             <div class="card-body">
-                @include('forms.post',[
-                'route'=>route('posts.update',$model->id),
+                @include('blog::forms.category',[
+                'route'=>route('blog::categories.update',$model->id),
                 'method'=>'PUT'
                 ])
             </div>

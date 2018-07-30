@@ -1,7 +1,7 @@
 @extends('laracrud.layouts.app')
 @section('breadcrumb')
 <li class="breadcrumb-item">
-    <a href="{{route('posts.index')}}">posts</a>
+    <a href="{{route('blog::categories.index')}}">categories</a>
 </li>
 <li>
     Create
@@ -12,7 +12,7 @@
     <div class='col-md-12'>
         <div class='card bg-white'>
             <div class="card-body">
-                @include('forms.post')
+                @include('blog::forms.category')
             </div>
         </div>
     </div>

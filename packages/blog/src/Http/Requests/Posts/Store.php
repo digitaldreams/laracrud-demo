@@ -33,7 +33,6 @@ class Store extends FormRequest
 			'category_id' => 'nullable|exists:categories,id|numeric',
 			'image' => 'nullable|file',
 			'published_at' => 'nullable|date',
-			'total_view' => 'required|numeric',
         ];
     }
 

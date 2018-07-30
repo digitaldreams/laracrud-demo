@@ -39,7 +39,7 @@
                         <ul class="dropdown-menu p-3 pt-0" role="menu">
 
                             <li class="py-1">
-                                <a href="#"><i class="fa fa-file-o"></i> Your Route</a>
+                                <a href="{{route('posts.index')}}"><i class="fa fa-pencil-square-o"></i> Posts</a>
                             </li>
 
                             <li class="dropdown-divider"></li>

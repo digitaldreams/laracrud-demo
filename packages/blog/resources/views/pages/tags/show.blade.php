@@ -1,7 +1,7 @@
 @extends('laracrud.layouts.app')
 @section('breadcrumb')
 <li class="breadcrumb-item">
-    <a href="{{route('posts.index')}}">posts</a>
+    <a href="{{route('blog::tags.index')}}">tags</a>
 </li>
 <li class="breadcrumb-item">
     {{$record->id}}
@@ -11,14 +11,14 @@
 
 @section('tools')
 
-<a href="{{'posts.create'}}">
+<a href="{{'blog::tags.create'}}">
     <span class="fa fa-plus"></span>
 </a>
-<a href="{{route('posts.edit',$record->id)}}">
+<a href="{{route('blog::tags.edit',$record->id)}}">
     <span class="fa fa-pencil"></span>
 </a>
 <form onsubmit="return confirm('Are you sure you want to delete?')"
-      action="{{route('posts.destroy',$record->id)}}"
+      action="{{route('blog::tags.destroy',$record->id)}}"
       method="post"
       style="display: inline">
     {{csrf_field()}}
@@ -34,7 +34,7 @@
 
 <div class="row">
     <div class="col-sm-8">
-        @include('cards.post')
+        @include('blog::cards.tag')
     </div>
 </div>
 @endSection
