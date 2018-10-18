@@ -33,6 +33,11 @@ $router->version('v1', ['namespace' => 'App\Http\Controllers\Api\Auth'], functio
 });
 
 $router->version('v1', ['namespace' => 'App\Http\Controllers\Api'], function ($api) {
+    $api->group(['prefix' => 'profile', 'middleware' => 'api.auth'], function ($api) {
+        $api->get('', ['as' => 'profile.show', 'uses' => 'ProfileController@show']);
+        $api->put('', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
+
+    });
     //please see packages/blog/route/version1.php
     //require(__DIR__ . '/version1.php');
 });
